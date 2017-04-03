@@ -135,6 +135,25 @@ public class MainTest {
 		
 		return dist;
 	}
+	
+	public static void movimentRange(int a[][], int x, int y, int range){
+		int d1 = 3000, d2 = 3000, d3 = 3000, d4 = 3000, d5 = 3000, d6 = 3000, d7 = 3000, d8 = 3000;
+		
+		for(int i = 1; (x - i) > -1 && (y - i) > -1 && range >= i; i++ ){
+			
+			if(a[x - i][y -i] == -1){
+				break;
+			}
+			
+			if(a[x - i][y -i] < d1){
+				System.out.println("x = " + (x -i) + " y = " + (y - i));
+				d1 = a[x - i][y -i];
+			}
+		}
+		
+		System.out.println("|" +d1);
+	}
+	
 
 	public static void main(String[] args) {
 		
@@ -151,7 +170,7 @@ public class MainTest {
 					,{0,0,0,0,0,0,0,0,0,0}};
 		
 		
-		System.out.println(MainTest.calcDist(aStar(a, 3, 3), 3, 7));
+		MainTest.movimentRange(aStar(a, 3, 3), 3, 7, 2);
 		
 	}
 
